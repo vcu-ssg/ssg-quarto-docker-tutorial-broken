@@ -72,7 +72,7 @@ Before you proceed, make sure you have the static files (HTML, CSS, JavaScript) 
 
      ```bash
     docker build -t my-website .
-     ```
+    ```
     
 
      ![](assets/base_image2.png)

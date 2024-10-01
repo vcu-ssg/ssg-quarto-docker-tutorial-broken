@@ -140,9 +140,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h3 class="anchored" data-anchor-id="verify-the-installation">3. Verify the Installation:</h3>
 <ul>
 <li><p>Open a terminal and type the following command to check if Docker is installed correctly:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">docker</span> <span class="at">--version</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p><img src="assets/get_started5.png" class="img-fluid"></p></li>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">docker</span> <span class="at">--version</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
 </ul>
+<p><img src="assets/get_started5.png" class="img-fluid"></p>
 </section>
 <section id="run-a-test-container" class="level3">
 <h3 class="anchored" data-anchor-id="run-a-test-container">4. Run a Test Container:</h3>
@@ -173,23 +173,84 @@ Prepare Your Website Files
 </div>
 </div>
 <section id="static-websites" class="level3">
-<h3 class="anchored" data-anchor-id="static-websites">Static Websites:</h3>
+<h3 class="anchored" data-anchor-id="static-websites">1. Static Websites</h3>
 <ul>
 <li><strong>Nginx</strong>: Ideal for serving static content such as HTML, CSS, and JavaScript.</li>
 <li>Use <code>nginx:alpine</code> for a lightweight, secure, and efficient static web server.</li>
 </ul>
-</section>
-<section id="create-a-dockerfile" class="level3">
-<h3 class="anchored" data-anchor-id="create-a-dockerfile">1. Create a Dockerfile</h3>
+<section id="create-a-dockerfile" class="level5">
+<h5 class="anchored" data-anchor-id="create-a-dockerfile">Create a Dockerfile</h5>
 <ul>
-<li>Create a txt file and paste the two lines below</li>
+<li>Create a txt file and paste the the lines below</li>
 </ul>
-<pre><code>  FROM nginx:alpine
-  COPY . /usr/share/nginx/html</code></pre>
+<div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>  <span class="ex">FROM</span> nginx:latest</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="ex">COPY</span> ./my-folder/index.html /usr/share/nginx/html/</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  <span class="ex">COPY</span> ./my-folder/styles.css /usr/share/nginx/html/</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>  <span class="ex">COPY</span> ./my-folder/script.js /usr/share/nginx/html/</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ul>
 <li>Save the file as Dockerfile in the root of your project directory where your website files are located (e.g., HTML, CSS, JavaScript files).</li>
 </ul>
-<p>```dockerfile FROM nginx:alpine COPY . /usr/share/nginx/html</p>
+</section>
+<section id="build-the-docker-image-using-command-line" class="level5">
+<h5 class="anchored" data-anchor-id="build-the-docker-image-using-command-line">Build the Docker Image Using Command Line:</h5>
+<ul>
+<li><p>Open a terminal or command prompt.</p></li>
+<li><p>Navigate to the directory where your - Dockerfile is located.</p></li>
+<li><p>Run the following command to build the Docker image:</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">docker</span> build <span class="at">-t</span> my-website .</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><img src="assets/base_image2.png" class="img-fluid"></p></li>
+<li><p>You can replace <code>my-website</code> with any name you prefer for your Docker image</p></li>
+</ul>
+</section>
+<section id="run-the-docker-container" class="level4">
+<h4 class="anchored" data-anchor-id="run-the-docker-container">Run the Docker Container</h4>
+<ul>
+<li><p>Once the image is built, run it by typing:</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>   <span class="ex">docker</span> run <span class="at">-d</span> <span class="at">-p</span> 8080:80 my-website</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<h4 id="verify-the-container-is-running" class="anchored">Verify the container is running</h4></li>
+<li><p>Run the following command to ensure your container is up and running:</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>   <span class="ex">docker</span> ps</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<h4 id="access-the-website" class="anchored">Access the Website</h4>
+<p>Now, go to your browser and visit <code>http://localhost:8080</code> to see your website.</p></li>
+</ul>
+<p><img src="assets/rundocker_cl.png" class="img-fluid"></p>
+<section id="building-a-docker-image-using-docker-desktop" class="level5">
+<h5 class="anchored" data-anchor-id="building-a-docker-image-using-docker-desktop">Building a Docker Image Using Docker Desktop</h5>
+</section>
+<section id="open-docker-desktop" class="level5">
+<h5 class="anchored" data-anchor-id="open-docker-desktop">Open Docker Desktop</h5>
+<p>Launch Docker Desktop on your machine. Ensure it is running by checking for the Docker icon in your system tray (Windows) or menu bar (macOS).</p>
+</section>
+<section id="navigate-to-the-images-section" class="level5">
+<h5 class="anchored" data-anchor-id="navigate-to-the-images-section">Navigate to the Images Section</h5>
+<ul>
+<li><p>In Docker Desktop, click on the <strong>Images</strong> tab located on the left-hand side. This tab will show you all the images that are currently available on your local machine.</p>
+<p><img src="assets/run_container1.png" class="img-fluid"></p></li>
+</ul>
+</section>
+</section>
+</section>
+<section id="step-4-build-image" class="level3">
+<h3 class="anchored" data-anchor-id="step-4-build-image">Step 4: Build Image</h3>
+<ul>
+<li>At the top of the Images screen, you will find an option to <strong>Build Image</strong>. Click on this button.</li>
+<li>A dialog box will appear asking you to specify the path to the Dockerfile and the context. The context is typically the path to the directory containing your Dockerfile and other files it refers to.</li>
+<li>You will also need to enter a tag for your image in the format <code>name:tag</code> (e.g., <code>my-website:latest</code>). If you don’t specify a tag, Docker will automatically tag the image as <code>latest</code>.</li>
+</ul>
+</section>
+<section id="step-5-start-the-build" class="level3">
+<h3 class="anchored" data-anchor-id="step-5-start-the-build">Step 5: Start the Build</h3>
+<ul>
+<li>After setting the Dockerfile path, context, and tag, click on the <strong>Build</strong> button in the dialog box.</li>
+<li>Docker Desktop will start the build process, and you can view the progress in the interface. You will see logs that are similar to what you would get in the terminal, giving you insight into the build steps being executed.</li>
+</ul>
+</section>
+<section id="step-6-verify-the-build" class="level3">
+<h3 class="anchored" data-anchor-id="step-6-verify-the-build">Step 6: Verify the Build</h3>
+<ul>
+<li>Once the build is complete, your new image will appear in the Images list in Docker Desktop.</li>
+<li>You can now use this image to run containers, just as you would with an image built via the command line.</li>
+</ul>
 </section>
 </section>
 

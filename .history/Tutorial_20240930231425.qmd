@@ -70,10 +70,10 @@ Before you proceed, make sure you have the static files (HTML, CSS, JavaScript) 
    - Navigate to the directory where your - Dockerfile is located.
    - Run the following command to build the Docker image:
 
-     ```bash
+    ```bash
     docker build -t my-website .
-     ```
-    
+    ```
+
 
      ![](assets/base_image2.png)
 
