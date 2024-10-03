@@ -1,4 +1,20 @@
 project:
+  type: website
   output-dir: ../docs
 
-  
+website:
+  title: "CMSC408 - Docker Setup"
+  navbar:
+    left:
+      - href: index.qmd
+        text: Home
+      - href: Tutorial.qmd
+        text: Tutorial
+      - href: about.qmd
+        text: About
+
+format:
+  html:
+    theme: cosmo
+    css: styles.css
+    toc: true
