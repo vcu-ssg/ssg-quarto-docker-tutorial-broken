@@ -217,7 +217,56 @@ Prepare Your Website Files
 <p>Now, go to your browser and visit <code>http://localhost:8080</code> to see your website.</p>
 <p><img src="assets/rundocker_cl.png" class="img-fluid"></p>
 </section>
+<section id="use-docker-volume-mounting" class="level5">
+<h5 class="anchored" data-anchor-id="use-docker-volume-mounting">Use Docker Volume Mounting</h5>
+<ul>
+<li><p>You can mount your local project directory as a volume in the container. By mounting your local files as a volume, any changes you make to your <code>index.html</code>, <code>style.css</code>, or <code>script.js</code> will be immediately reflected inside the running container, allowing you to see updates without rebuilding the image or restarting the container.</p></li>
+<li><p>Run the command below to find ContainerID</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">docker</span> ps</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<li><p>Stop the current container (if it’s using)</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">docker</span> stop <span class="op">&lt;</span>container-id<span class="op">&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<li><p>Run the container with a volume mount</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>   <span class="ex">docker</span> run <span class="at">-d</span> <span class="at">-p</span> 8080:80 <span class="at">-v</span> <span class="va">$(</span><span class="bu">pwd</span><span class="va">)</span>/my-folder:/usr/share/nginx/html my-website</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><img src="assets/re-run-container.png" class="img-fluid"></p></li>
+</ul>
 </section>
+</section>
+</section>
+</section>
+<section id="step-3-using-docker-compose" class="level2">
+<h2 class="anchored" data-anchor-id="step-3-using-docker-compose">Step 3: Using Docker Compose</h2>
+<ul>
+<li><p>Docker Compose is a tool that lets you define and run multi-container applications. With one command, you can create and launch all the services defined in the <code>docker-compose.yml</code> file.</p></li>
+<li><p>If Docker Desktop is installed on your machines, Docker Compose should already be included. If not, they need to install it separately. You can check if it’s installed by running:</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>   <span class="ex">docker-compose</span> <span class="at">--version</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+</ul>
+<section id="create-a-docker-compose.yml-file" class="level5">
+<h5 class="anchored" data-anchor-id="create-a-docker-compose.yml-file">Create a <code>docker-compose.yml</code> File</h5>
+<ul>
+<li><p>Navigate to the root of your project where Dockerfile is also located, create a <code>docker-compose.yml</code> file. Below is a simple docker-compose.yml for a static site served by Nginx.</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">version:</span> <span class="st">'3.8'</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>    <span class="ex">services:</span></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>    <span class="ex">nginx:</span></span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>       <span class="ex">image:</span> nginx:alpine</span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>       <span class="ex">ports:</span></span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>          <span class="ex">-</span> <span class="st">"8089:80"</span></span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>       <span class="ex">volumes:</span></span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a>          <span class="ex">-</span> ./my-folder:/usr/share/nginx/html</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+</ul>
+</section>
+<section id="build-and-run-containers" class="level5">
+<h5 class="anchored" data-anchor-id="build-and-run-containers">Build and Run Containers</h5>
+<ul>
+<li><p>Run the command below in your terminal from the root of your project</p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">docker-compose</span> up <span class="at">-d</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+</ul>
+<p><img src="assets/docker-compose-run.png" class="img-fluid"></p>
+<ul>
+<li>The <code>-d</code> flag runs containers in the background.</li>
+<li>Open a web browser and navigate to http://localhost:<port>/ to verify that your service is running correctly.</port></li>
+<li>Adjust <port> based on your docker-compose.yml settings. In my example I use port 8089</port></li>
+<li>Use <code>docker-compose ps</code> to check the status of running services.</li>
+</ul>
 </section>
 </section>
 
