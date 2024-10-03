@@ -1,0 +1,6 @@
+---
+title: index page
+---
+
+this is the index page.
+
