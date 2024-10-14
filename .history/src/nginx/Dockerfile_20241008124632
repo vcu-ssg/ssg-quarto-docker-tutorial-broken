@@ -1,0 +1,4 @@
+FROM nginx:latest
+COPY ./src/nginx/my-folder/index.html /usr/share/nginx/html/
+COPY ./src/nginx/my-folder/styles.css /usr/share/nginx/html/
+COPY ./src/nginx/my-folder/script.js /usr/share/nginx/html/
