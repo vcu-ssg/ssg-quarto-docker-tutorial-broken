@@ -1,0 +1,35 @@
+version: '3.8'
+services:
+  nginx:
+    image: nginx:alpine
+    ports:
+      - "8080:80"
+    volumes:
+      - ./src/nginx/:/usr/share/nginx/html
+
+  apache:
+      build: ./src/apache
+      ports:
+        - "8081:80"
+      volumes:
+        - ./src/apache:/usr/local/apache2/htdocs
+
+  nodejs:
+    build: 
+      context: ./src/nodejs
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    #volumes:
+      #- ./src/nodejs:/usr/src/app
+
+
+services:
+  nodejs:
+    build:
+      context: ./src/nodejs  # Ensure this path is correct
+      dockerfile: Dockerfile  # Ensure the Dockerfile is located here
+    ports:
+      - "3000:3000"
+    depends_on:
+      - mysql
