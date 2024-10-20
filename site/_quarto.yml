@@ -15,8 +15,12 @@ website:
     style: "docked"
     search: true
     contents:
-      - href: installing-docker-mac.qmd
-        text: Install-Mac
+      - section: Installing docker
+        contents:
+        - href: installing-docker-mac.qmd
+          text: Install-Mac
+        - href: installing-docker-pc.qmd
+          text: Install-PC
       - href: selecting-base-image.qmd
         text: Selecting-base
       - href: using-docker-compose.qmd

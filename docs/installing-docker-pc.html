@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>CMSC408 - Docker Tutorial - About page</title>
+<title>CMSC408 - Docker Tutorial - Installing Docker on Your PC</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -19,6 +19,40 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -93,7 +127,7 @@ ul.task-list li input[type="checkbox"] {
 <span class="menu-text">Background</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="./about.html" aria-current="page"> 
+    <a class="nav-link" href="./about.html"> 
 <span class="menu-text">About</span></a>
   </li>  
 </ul>
@@ -107,7 +141,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">About page</li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./installing-docker-mac.html">Installing docker</a></li><li class="breadcrumb-item"><a href="./installing-docker-pc.html">Install-PC</a></li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -144,7 +178,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./installing-docker-pc.html" class="sidebar-item-text sidebar-link">
+  <a href="./installing-docker-pc.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Install-PC</span></a>
   </div>
 </li>
@@ -172,17 +206,19 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#about-the-author" id="toc-about-the-author" class="nav-link active" data-scroll-target="#about-the-author">About the author</a></li>
-  <li><a href="#about-the-site" id="toc-about-the-site" class="nav-link" data-scroll-target="#about-the-site">About the site</a></li>
+  <li><a href="#download-docker-desktop-for-pc" id="toc-download-docker-desktop-for-pc" class="nav-link active" data-scroll-target="#download-docker-desktop-for-pc">1. Download Docker Desktop for PC:</a></li>
+  <li><a href="#install-docker-desktop" id="toc-install-docker-desktop" class="nav-link" data-scroll-target="#install-docker-desktop">2. Install Docker Desktop:</a></li>
+  <li><a href="#verify-the-installation" id="toc-verify-the-installation" class="nav-link" data-scroll-target="#verify-the-installation">3. Verify the Installation:</a></li>
+  <li><a href="#run-a-test-container" id="toc-run-a-test-container" class="nav-link" data-scroll-target="#run-a-test-container">4. Run a Test Container:</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./installing-docker-mac.html">Installing docker</a></li><li class="breadcrumb-item"><a href="./installing-docker-pc.html">Install-PC</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">About page</h1>
+<h1 class="title">Installing Docker on Your PC</h1>
 </div>
 
 
@@ -199,17 +235,39 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="about-the-author" class="level2">
-<h2 class="anchored" data-anchor-id="about-the-author">About the author</h2>
-<p>This tutorial was creating during the Fall 2024 semester by Huyen Huynh.</p>
-<p>Huyen is a MS graduate student at VCU and a graduate of VCU Computer Science in Spring 2024.</p>
+<section id="download-docker-desktop-for-pc" class="level2">
+<h2 class="anchored" data-anchor-id="download-docker-desktop-for-pc">1. Download Docker Desktop for PC:</h2>
+<ul>
+<li>Go to <a href="https://www.docker.com/">Docker Website</a></li>
+<li>Click on “Get Started” <img src="assets/get_started.png" class="img-fluid"></li>
+</ul>
 </section>
-<section id="about-the-site" class="level2">
-<h2 class="anchored" data-anchor-id="about-the-site">About the site</h2>
-<p>The site is built using <a href="https://quarto.org">quarto</a>.</p>
-<p>The site is delivered using <a href="https://pages.github.com/">github-pages</a></p>
-<p>Quarto and gh-pages <a href="https://quarto.org/docs/publishing/github-pages.html">work together</a> very nicely!</p>
-<p><a href="https://github.com/vcu-ssg/ssg-quarto-docker-tutorial">Source for this site</a> is maintained on Github.</p>
+<section id="install-docker-desktop" class="level2">
+<h2 class="anchored" data-anchor-id="install-docker-desktop">2. Install Docker Desktop:</h2>
+<p><em>(needs instructions and pictures)</em></p>
+</section>
+<section id="verify-the-installation" class="level2">
+<h2 class="anchored" data-anchor-id="verify-the-installation">3. Verify the Installation:</h2>
+<ul>
+<li>Open a terminal and type the following command to check if Docker is installed correctly:</li>
+</ul>
+<div class="sourceCode" id="cb1"><pre class="sourceCode powershell code-with-copy"><code class="sourceCode powershell"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>docker <span class="op">--</span>version</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><img src="assets/get_started5.png" class="img-fluid"></p>
+</section>
+<section id="run-a-test-container" class="level2">
+<h2 class="anchored" data-anchor-id="run-a-test-container">4. Run a Test Container:</h2>
+<ul>
+<li>To ensure Docker is functioning properly, run a simple container like “Hello World”:</li>
+</ul>
+<div class="sourceCode" id="cb2"><pre class="sourceCode powershell code-with-copy"><code class="sourceCode powershell"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>docker run hello-world</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li>This command will download a test image and run it, outputting a message that confirms Docker is installed and working.</li>
+</ul>
+<p><img src="assets/get_started6.png" class="img-fluid"></p>
+<ul>
+<li><p>If you run a Docker command like <code>docker run hello-world</code> for the first time and see a message saying, “Unable to find the image locally”, don’t worry! This just means the image isn’t on your machine yet.</p></li>
+<li><p>Docker will automatically start downloading the image from Docker Hub. Once the image is downloaded, it will run.</p></li>
+</ul>
 
 
 </section>

@@ -6,7 +6,7 @@
     "section": "",
     "text": "Docker Compose is a tool that lets you define and run multi-container applications. With one command, you can create and launch all the services defined in the docker-compose.yml file.\nIf Docker Desktop is installed on your machines, Docker Compose should already be included. If not, they need to install it separately. You can check if it’s installed by running:",
     "crumbs": [
-      "Home",
+      "Background",
       "Using Docker-Compose"
     ]
   },
@@ -17,7 +17,7 @@
     "section": "Create a docker-compose.yml File",
     "text": "Create a docker-compose.yml File\n\nNavigate to the root of your project where Dockerfile is also located, create a docker-compose.yml file. Below is a simple docker-compose.yml for a static site served by Nginx.\n\n   version: '3.8'\n   services:\n   nginx:\n      image: nginx:alpine\n      ports:\n         - \"8089:80\"\n      volumes:\n         - ./my-folder:/usr/share/nginx/html",
     "crumbs": [
-      "Home",
+      "Background",
       "Using Docker-Compose"
     ]
   },
@@ -28,30 +28,68 @@
     "section": "Build and Run Containers",
     "text": "Build and Run Containers\n\nRun the command below in your terminal from the root of your project\n\n   docker-compose up -d\n\n\nThe -d flag runs containers in the background.\nOpen a web browser and navigate to http://localhost:/ to verify that your service is running correctly.\nAdjust  based on your docker-compose.yml settings. In my example I use port 8089\nUse docker-compose ps to check the status of running services.",
     "crumbs": [
-      "Home",
+      "Background",
       "Using Docker-Compose"
     ]
   },
   {
-    "objectID": "selecting-base-image.html",
-    "href": "selecting-base-image.html",
-    "title": "Selecting a base image for your web site",
+    "objectID": "installing-docker-pc.html",
+    "href": "installing-docker-pc.html",
+    "title": "Installing Docker on Your PC",
     "section": "",
-    "text": "When building a website using Docker, selecting the right base image is crucial. The base image provides the underlying operating system and the necessary software components.\nThe choice of a base image depends on the needs of your project. Here are some common scenarios and the recommended base images:",
+    "text": "Go to Docker Website\nClick on “Get Started”",
     "crumbs": [
-      "Home",
-      "Selecting-base"
+      "Background",
+      "Installing docker",
+      "Install-PC"
     ]
   },
   {
-    "objectID": "selecting-base-image.html#static-websites",
-    "href": "selecting-base-image.html#static-websites",
-    "title": "Selecting a base image for your web site",
-    "section": "1. Static Websites",
-    "text": "1. Static Websites\n\nNginx: Ideal for serving static content such as HTML, CSS, and JavaScript.\nUse nginx:alpine for a lightweight, secure, and efficient static web server.\n\n\nCreate a Dockerfile\n\nCreate a txt file and paste the the lines below\n   FROM nginx:latest\n   COPY ./my-folder/index.html /usr/share/nginx/html/\n   COPY ./my-folder/styles.css /usr/share/nginx/html/\n   COPY ./my-folder/script.js /usr/share/nginx/html/\nSave the file as Dockerfile in the root of your project directory where your website files are located (e.g., HTML, CSS, JavaScript files).\n\n\n\nBuild the Docker Image Using Command Line\n\nOpen a terminal or command prompt.\nNavigate to the directory where your Dockerfile is located.\nRun the following command to build the Docker image:\n   docker build -t my-website .\nYou can replace my-website with any name you prefer for your Docker image\n\n\n\nRun the Docker Container\n\nOnce the image is built, run it by typing:\n   docker run -d -p 8080:80 my-website\n\n\n\nVerify the container is running\n\nRun the following command to ensure your container is up and running:\n   docker ps\n\n\n\nAccess the Website\nNow, go to your browser and visit http://localhost:8080 to see your website.\n\n\n\nUse Docker Volume Mounting\n\nYou can mount your local project directory as a volume in the container. By mounting your local files as a volume, any changes you make to your index.html, style.css, or script.js will be immediately reflected inside the running container, allowing you to see updates without rebuilding the image or restarting the container.\nRun the command below to find ContainerID\n    docker ps\nStop the current container (if it’s using)\n    docker stop &lt;container-id&gt;\nRun the container with a volume mount\n   docker run -d -p 8080:80 -v $(pwd)/my-folder:/usr/share/nginx/html my-website",
+    "objectID": "installing-docker-pc.html#download-docker-desktop-for-pc",
+    "href": "installing-docker-pc.html#download-docker-desktop-for-pc",
+    "title": "Installing Docker on Your PC",
+    "section": "",
+    "text": "Go to Docker Website\nClick on “Get Started”",
     "crumbs": [
-      "Home",
-      "Selecting-base"
+      "Background",
+      "Installing docker",
+      "Install-PC"
+    ]
+  },
+  {
+    "objectID": "installing-docker-pc.html#install-docker-desktop",
+    "href": "installing-docker-pc.html#install-docker-desktop",
+    "title": "Installing Docker on Your PC",
+    "section": "2. Install Docker Desktop:",
+    "text": "2. Install Docker Desktop:\n(needs instructions and pictures)",
+    "crumbs": [
+      "Background",
+      "Installing docker",
+      "Install-PC"
+    ]
+  },
+  {
+    "objectID": "installing-docker-pc.html#verify-the-installation",
+    "href": "installing-docker-pc.html#verify-the-installation",
+    "title": "Installing Docker on Your PC",
+    "section": "3. Verify the Installation:",
+    "text": "3. Verify the Installation:\n\nOpen a terminal and type the following command to check if Docker is installed correctly:\n\ndocker --version",
+    "crumbs": [
+      "Background",
+      "Installing docker",
+      "Install-PC"
+    ]
+  },
+  {
+    "objectID": "installing-docker-pc.html#run-a-test-container",
+    "href": "installing-docker-pc.html#run-a-test-container",
+    "title": "Installing Docker on Your PC",
+    "section": "4. Run a Test Container:",
+    "text": "4. Run a Test Container:\n\nTo ensure Docker is functioning properly, run a simple container like “Hello World”:\n\ndocker run hello-world\n\nThis command will download a test image and run it, outputting a message that confirms Docker is installed and working.\n\n\n\nIf you run a Docker command like docker run hello-world for the first time and see a message saying, “Unable to find the image locally”, don’t worry! This just means the image isn’t on your machine yet.\nDocker will automatically start downloading the image from Docker Hub. Once the image is downloaded, it will run.",
+    "crumbs": [
+      "Background",
+      "Installing docker",
+      "Install-PC"
     ]
   },
   {
@@ -59,7 +97,7 @@
     "href": "index.html",
     "title": "CMSC 408 - Docker Tutorial",
     "section": "",
-    "text": "Welcome to the docker tutorial! This tutorial will discuss:\n\nInstalling docker and docker compose on your computer,\nSelecting a base image for your application(s),\nUsing docker-compose to develop your application.\n\nAt completion of this tutorial you should have a website and database running on your machine.\nAbout - talks about the motivation for this site and introduces the principle author.\nBackground - provides background information on the tools used for this site."
+    "text": "Welcome to the docker tutorial! This tutorial will discuss:\n\nInstalling docker and docker compose on your computer,\nSelecting a base image for your application(s),\nUsing docker-compose to develop your application.\n\nAt completion of this tutorial you should have a website and database running on your machine.\nBackground - provides background information on the tools used for this site.\nAbout - talks about the motivation for this site and introduces the principle author."
   },
   {
     "objectID": "about.html",
@@ -117,7 +155,8 @@
     "section": "",
     "text": "Go to Docker Website\nClick on “Get Started”",
     "crumbs": [
-      "Home",
+      "Background",
+      "Installing docker",
       "Install-Mac"
     ]
   },
@@ -128,7 +167,8 @@
     "section": "",
     "text": "Go to Docker Website\nClick on “Get Started”",
     "crumbs": [
-      "Home",
+      "Background",
+      "Installing docker",
       "Install-Mac"
     ]
   },
@@ -139,7 +179,8 @@
     "section": "2. Install Docker Desktop:",
     "text": "2. Install Docker Desktop:\n - Open the downloaded .dmg file. - Drag the Docker icon to the Applications folder to install it.  - Open Docker from your Applications folder. - You may be prompted to enter your email, so follow the on-screen instructions.",
     "crumbs": [
-      "Home",
+      "Background",
+      "Installing docker",
       "Install-Mac"
     ]
   },
@@ -150,7 +191,8 @@
     "section": "3. Verify the Installation:",
     "text": "3. Verify the Installation:\n\nOpen a terminal and type the following command to check if Docker is installed correctly:\ndocker --version",
     "crumbs": [
-      "Home",
+      "Background",
+      "Installing docker",
       "Install-Mac"
     ]
   },
@@ -161,36 +203,31 @@
     "section": "4. Run a Test Container:",
     "text": "4. Run a Test Container:\n\nTo ensure Docker is functioning properly, run a simple container like “Hello World”:\ndocker run hello-world\nThis command will download a test image and run it, outputting a message that confirms Docker is installed and working. \nIf you run a Docker command like docker run hello-world for the first time and see a message saying, “Unable to find the image locally”, don’t worry! This just means the image isn’t on your machine yet.\nDocker will automatically start downloading the image from Docker Hub. Once the image is downloaded, it will run.",
     "crumbs": [
-      "Home",
+      "Background",
+      "Installing docker",
       "Install-Mac"
     ]
   },
   {
-    "objectID": "Tutorial.html",
-    "href": "Tutorial.html",
-    "title": "A Guide to Start Your Project with Docker",
+    "objectID": "selecting-base-image.html",
+    "href": "selecting-base-image.html",
+    "title": "Selecting a base image for your web site",
     "section": "",
-    "text": "Go to Docker Website\nClick on “Get Started” \n\n\n\n\n - Open the downloaded .dmg file. - Drag the Docker icon to the Applications folder to install it.  - Open Docker from your Applications folder. - You may be prompted to enter your email, so follow the on-screen instructions. \n\n\n\n\nOpen a terminal and type the following command to check if Docker is installed correctly:\ndocker --version\n\n\n\n\n\n\nTo ensure Docker is functioning properly, run a simple container like “Hello World”:\ndocker run hello-world\nThis command will download a test image and run it, outputting a message that confirms Docker is installed and working. \nIf you run a Docker command like docker run hello-world for the first time and see a message saying, “Unable to find the image locally”, don’t worry! This just means the image isn’t on your machine yet.\nDocker will automatically start downloading the image from Docker Hub. Once the image is downloaded, it will run."
+    "text": "When building a website using Docker, selecting the right base image is crucial. The base image provides the underlying operating system and the necessary software components.\nThe choice of a base image depends on the needs of your project. Here are some common scenarios and the recommended base images:",
+    "crumbs": [
+      "Background",
+      "Selecting-base"
+    ]
   },
   {
-    "objectID": "Tutorial.html#step-1-installing-docker-on-your-mac",
-    "href": "Tutorial.html#step-1-installing-docker-on-your-mac",
-    "title": "A Guide to Start Your Project with Docker",
-    "section": "",
-    "text": "Go to Docker Website\nClick on “Get Started” \n\n\n\n\n - Open the downloaded .dmg file. - Drag the Docker icon to the Applications folder to install it.  - Open Docker from your Applications folder. - You may be prompted to enter your email, so follow the on-screen instructions. \n\n\n\n\nOpen a terminal and type the following command to check if Docker is installed correctly:\ndocker --version\n\n\n\n\n\n\nTo ensure Docker is functioning properly, run a simple container like “Hello World”:\ndocker run hello-world\nThis command will download a test image and run it, outputting a message that confirms Docker is installed and working. \nIf you run a Docker command like docker run hello-world for the first time and see a message saying, “Unable to find the image locally”, don’t worry! This just means the image isn’t on your machine yet.\nDocker will automatically start downloading the image from Docker Hub. Once the image is downloaded, it will run."
-  },
-  {
-    "objectID": "Tutorial.html#step-2-selecting-a-base-image-for-your-website",
-    "href": "Tutorial.html#step-2-selecting-a-base-image-for-your-website",
-    "title": "A Guide to Start Your Project with Docker",
-    "section": "Step 2: Selecting a Base Image for Your Website",
-    "text": "Step 2: Selecting a Base Image for Your Website\nWhen building a website using Docker, selecting the right base image is crucial. The base image provides the underlying operating system and the necessary software components.\nThe choice of a base image depends on the needs of your project. Here are some common scenarios and the recommended base images:\n\n\n\n\n\n\nPrepare Your Website Files\n\n\n\nBefore you proceed, make sure you have the static files (HTML, CSS, JavaScript) for your website ready in a folder. This folder will also be where you create your Dockerfile.\n\n\n\n1. Static Websites\n\nNginx: Ideal for serving static content such as HTML, CSS, and JavaScript.\nUse nginx:alpine for a lightweight, secure, and efficient static web server.\n\n\nCreate a Dockerfile\n\nCreate a txt file and paste the the lines below\n   FROM nginx:latest\n   COPY ./my-folder/index.html /usr/share/nginx/html/\n   COPY ./my-folder/styles.css /usr/share/nginx/html/\n   COPY ./my-folder/script.js /usr/share/nginx/html/\nSave the file as Dockerfile in the root of your project directory where your website files are located (e.g., HTML, CSS, JavaScript files).\n\n\n\nBuild the Docker Image Using Command Line\n\nOpen a terminal or command prompt.\nNavigate to the directory where your Dockerfile is located.\nRun the following command to build the Docker image:\n   docker build -t my-website .\nYou can replace my-website with any name you prefer for your Docker image\n\n\nRun the Docker Container\n\nOnce the image is built, run it by typing:\n   docker run -d -p 8080:80 my-website\n\n\n\nVerify the container is running\n\nRun the following command to ensure your container is up and running:\n   docker ps\n\n\n\nAccess the Website\nNow, go to your browser and visit http://localhost:8080 to see your website.\n\n\n\nUse Docker Volume Mounting\n\nYou can mount your local project directory as a volume in the container. By mounting your local files as a volume, any changes you make to your index.html, style.css, or script.js will be immediately reflected inside the running container, allowing you to see updates without rebuilding the image or restarting the container.\nRun the command below to find ContainerID\n    docker ps\nStop the current container (if it’s using)\n    docker stop &lt;container-id&gt;\nRun the container with a volume mount\n   docker run -d -p 8080:80 -v $(pwd)/my-folder:/usr/share/nginx/html my-website"
-  },
-  {
-    "objectID": "Tutorial.html#step-3-using-docker-compose",
-    "href": "Tutorial.html#step-3-using-docker-compose",
-    "title": "A Guide to Start Your Project with Docker",
-    "section": "Step 3: Using Docker Compose",
-    "text": "Step 3: Using Docker Compose\n\nDocker Compose is a tool that lets you define and run multi-container applications. With one command, you can create and launch all the services defined in the docker-compose.yml file.\nIf Docker Desktop is installed on your machines, Docker Compose should already be included. If not, they need to install it separately. You can check if it’s installed by running:\n   docker-compose --version\n\n\nCreate a docker-compose.yml File\n\nNavigate to the root of your project where Dockerfile is also located, create a docker-compose.yml file. Below is a simple docker-compose.yml for a static site served by Nginx.\n    version: '3.8'\n    services:\n    nginx:\n       image: nginx:alpine\n       ports:\n          - \"8089:80\"\n       volumes:\n          - ./my-folder:/usr/share/nginx/html\n\n\n\nBuild and Run Containers\n\nRun the command below in your terminal from the root of your project\n    docker-compose up -d\n\n\n\nThe -d flag runs containers in the background.\nOpen a web browser and navigate to http://localhost:/ to verify that your service is running correctly.\nAdjust  based on your docker-compose.yml settings. In my example I use port 8089\nUse docker-compose ps to check the status of running services."
+    "objectID": "selecting-base-image.html#static-websites",
+    "href": "selecting-base-image.html#static-websites",
+    "title": "Selecting a base image for your web site",
+    "section": "1. Static Websites",
+    "text": "1. Static Websites\n\nNginx: Ideal for serving static content such as HTML, CSS, and JavaScript.\nUse nginx:alpine for a lightweight, secure, and efficient static web server.\n\n\nCreate a Dockerfile\n\nCreate a txt file and paste the the lines below\n   FROM nginx:latest\n   COPY ./my-folder/index.html /usr/share/nginx/html/\n   COPY ./my-folder/styles.css /usr/share/nginx/html/\n   COPY ./my-folder/script.js /usr/share/nginx/html/\nSave the file as Dockerfile in the root of your project directory where your website files are located (e.g., HTML, CSS, JavaScript files).\n\n\n\nBuild the Docker Image Using Command Line\n\nOpen a terminal or command prompt.\nNavigate to the directory where your Dockerfile is located.\nRun the following command to build the Docker image:\n   docker build -t my-website .\nYou can replace my-website with any name you prefer for your Docker image\n\n\n\nRun the Docker Container\n\nOnce the image is built, run it by typing:\n   docker run -d -p 8080:80 my-website\n\n\n\nVerify the container is running\n\nRun the following command to ensure your container is up and running:\n   docker ps\n\n\n\nAccess the Website\nNow, go to your browser and visit http://localhost:8080 to see your website.\n\n\n\nUse Docker Volume Mounting\n\nYou can mount your local project directory as a volume in the container. By mounting your local files as a volume, any changes you make to your index.html, style.css, or script.js will be immediately reflected inside the running container, allowing you to see updates without rebuilding the image or restarting the container.\nRun the command below to find ContainerID\n    docker ps\nStop the current container (if it’s using)\n    docker stop &lt;container-id&gt;\nRun the container with a volume mount\n   docker run -d -p 8080:80 -v $(pwd)/my-folder:/usr/share/nginx/html my-website",
+    "crumbs": [
+      "Background",
+      "Selecting-base"
+    ]
   }
 ]
