@@ -1,5 +1,8 @@
 # Apache-PHP docker-compose example
 
+This example is primarily for development.  You would probably prefer to run nginx as a load balancer and reverse proxy,
+a database locally, and a web site with files inside the container.
+
 In this example, we use docker and docker-compose to locally host an apache/php server 
 and local web page.  The web page connects to the CMSC508.COM mysql server and lists
 all the tables in the HR database.
