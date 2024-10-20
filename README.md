@@ -3,12 +3,6 @@
 This repo contains a scaffold and tutorial for running a webserver on 
 a student laptop for CMSC 408.
 
-The tutorial should include a walk-through on getting the entire system up
-and running.
-
-The tutorial should include a walk-through on getting the entire system up
-and running.
-
 The tutorial is presented on [GH pages, here.](https://vcu-ssg.github.io/ssg-quarto-docker-tutorial/)
 
 ## Files and Folders
