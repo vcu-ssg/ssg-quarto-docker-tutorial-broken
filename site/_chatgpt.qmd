@@ -1,0 +1,14 @@
+
+```
+Using docker and docker compose, I'd like to run apache web server and PHP in one container , and have a php page that connects to a remote mysql database.
+```
+
+
+```
+I'm using docker and docker compose to create a production-style web server and database.
+I'd like code to create a system of four containers:
+container 1: hosts a mysql database server.  The database is loaded with a 'my-ddl.sql' file found in the ./db directory.
+container 2: hosts a apache-php web server. This container runs phpmyadmin to service the database in container 1.
+container 3: hosts another apache-php web server.  The web site serves files stored in the ./site folder.  The ./site folder should contain two pages: index.php that displays all the tables in the database, and a second page "show-table.php" that lists the contents of a table where the table name is passed as a query string to "show-table.php".
+container 4: hosts an nginx server. The nginx server acts as a load balancer and reverse-proxy to the other containers.  Requests to localhost:3306 should be mapped to the mysql database.  Requests to http://localhost:8080/phpmyadmin should go to container 2 and all other requests should go to container 3.
+```

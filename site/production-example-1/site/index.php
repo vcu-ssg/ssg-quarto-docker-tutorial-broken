@@ -1,9 +1,9 @@
 <?php
 // Database connection parameters
-$servername = getenv('MYSQL_HOST');
-$username = getenv('MYSQL_USER');
-$password = getenv('MYSQL_PASSWORD');
-$dbname = getenv('MYSQL_DATABASE');
+$servername = "mysql_db"; // Docker service name for the MySQL container
+$username = "root";
+$password = "root_password";
+$dbname = "my_database";
 
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
