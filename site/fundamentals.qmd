@@ -1,0 +1,149 @@
+---
+title: Docker fundamentals
+---
+
+Docker is a platform that enables developers to package applications and their dependencies into standardized containers, ensuring consistency across different environments. It uses lightweight, isolated containers that share the host system's kernel, making them more efficient than traditional virtual machines. Docker simplifies application deployment, scaling, and management, especially in cloud and microservices architectures.
+
+## Motivation
+
+Docker was created to solve the issue of inconsistencies between development, testing, and production environments by packaging applications and their dependencies into containers. It aimed to streamline software deployment and enhance scalability, making it easier for developers and operations teams to collaborate and manage applications across different systems.
+
+Docker was created in 2013 by Solomon Hykes, during his time at the company dotCloud, a platform-as-a-service (PaaS) provider. Initially developed as an internal project, it was later open-sourced and quickly gained popularity due to its innovative approach to containerization. Docker Inc. was subsequently founded to further develop and support the Docker platform as it transformed software development and operations.
+
+
+## Core concepts
+
+The following tables provides a brief listing of core or fundamental docker concepts.
+
+**Getting Started**
+
+| **Concept**           | **Purpose**                                               |
+|-----------------------|-----------------------------------------------------------|
+| **Containers**        | Running instance of an image; core unit of Docker.         |
+| **Images**            | Blueprint for containers, containing application and dependencies. |
+| **Dockerfile**        | Instructions to build images for reproducible environments. |
+| **Docker CLI**        | Main interface for managing Docker resources.              |
+
+
+**Docker environment**
+
+| **Concept**           | **Purpose**                                               |
+|-----------------------|-----------------------------------------------------------|
+| **Volumes**           | Persistent storage for containers.                        |
+| **Networks**          | Manages communication between containers.                 |
+| **Registries**        | Stores and distributes Docker images (e.g., Docker Hub).   |
+| **Services**          | Defines scalable and distributed container applications.   |
+
+**Docker control**
+
+| **Docker Compose**    | Manages multi-container applications with services, networks, and volumes. |
+| **Docker Swarm / Kubernetes** | Orchestrates large-scale container deployments in production. |
+| **Docker Daemon**     | Background process managing Docker resources.              |
+
+
+## Getting started
+
+To get started with Docker, you first build or pull a Docker image, which is a template containing your application and its dependencies, and then create containers from that image to run the application. Using a Dockerfile, you can automate the image-building process, and with the Docker CLI, you can manage images, containers, networks, and other Docker resources through simple commands.
+
+### Containers
+
+- **Definition**: A container is a running instance of a Docker image. It provides an isolated environment to run applications, with their own filesystem, networking, and processes, but shares the host system’s kernel.
+- **Purpose**: Containers are the core concept of Docker, representing live applications running in isolated environments.
+- **Key Points**:
+  - Can be started, stopped, and removed.
+  - Provides a consistent environment across development, testing, and production.
+  - Lightweight compared to virtual machines.
+
+### Images
+
+- **Definition**: A Docker image is a read-only template that contains the application, along with its dependencies and environment configurations.
+- **Purpose**: Images are the blueprint for creating containers, defining everything needed to run an application.
+- **Key Points**:
+  - Can be built from a Dockerfile.
+  - Immutable and reusable.
+  - Can be shared via Docker Hub or private registries.
+
+### Dockerfile
+
+- **Definition**: A text file containing the instructions to build a Docker image.
+- **Purpose**: Automates the creation of images by defining the application, its dependencies, and how to configure it.
+- **Key Points**:
+  - Provides reproducibility for building images.
+  - Each instruction adds a new layer to the image.
+  - Typically starts with a base image and adds application-specific instructions.
+
+### Docker CLI
+
+- **Definition**: The command-line interface used to interact with Docker.
+- **Purpose**: Allows users to issue commands to the Docker daemon to manage containers, images, networks, volumes, etc.
+- **Key Points**:
+  - Main interface for interacting with Docker.
+  - Allows building images, running containers, and managing Docker resources.
+
+## Docker Environment
+
+Docker environment concepts such as volumes and networks ensure that containers have persistent storage and can communicate with each other or external systems. Registries store and distribute Docker images, while services allow for scalable and distributed container deployments, especially in orchestrated environments like Docker Swarm or Kubernetes.
+
+### Volumes
+
+- **Definition**: A way to persist data generated or used by containers.
+- **Purpose**: Provides persistent storage that is independent of the container lifecycle.
+- **Key Points**:
+  - Useful for databases and applications needing persistent state.
+  - Can be shared across multiple containers.
+  - Data is stored outside the container's filesystem.
+
+### Networks
+
+- **Definition**: Enables communication between Docker containers or between containers and the outside world.
+- **Purpose**: Provides the ability to isolate, expose, and manage how containers communicate.
+- **Key Points**:
+  - Containers on the same network can communicate using their names.
+  - Several types of networks like `bridge`, `host`, and `overlay`.
+
+### Registries
+
+- **Definition**: A storage and distribution system for Docker images, such as Docker Hub.
+- **Purpose**: Enables sharing and downloading Docker images, either publicly or privately.
+- **Key Points**:
+  - Docker Hub is the default public registry.
+  - Private registries can be used for internal projects.
+  - Images are pushed and pulled from registries.
+
+### Services
+
+- **Definition**: A higher-level abstraction that defines how containers should run in a Docker Swarm or Kubernetes cluster.
+- **Purpose**: Used to scale containers across multiple hosts and manage distributed containerized applications.
+- **Key Points**:
+  - Defines replicas (multiple instances) of containers.
+  - Used in orchestration environments like Docker Swarm and Kubernetes.
+
+## Docker control
+
+Docker control programs like the Docker daemon manage the core operations of containers, images, and networking, acting as the engine that powers Docker. Tools like Docker Compose and Kubernetes provide higher-level orchestration, with Docker Compose managing multi-container applications and Kubernetes handling large-scale container deployment, scaling, and management across clusters.
+
+### Docker Compose
+
+- **Definition**: A tool to define and manage multi-container Docker applications via a `docker-compose.yml` file.
+- **Purpose**: Simplifies running multi-container applications by managing containers, networks, and volumes together.
+- **Key Points**:
+  - Defines services and how they interact.
+  - Enables easy scaling and management of containerized apps.
+  - Great for development and testing environments.
+
+### Docker Swarm and Kubernetes (Orchestration)
+
+- **Docker Swarm**: Docker’s native clustering and orchestration tool (less commonly used now).
+- **Kubernetes**: An open-source orchestration platform that automates deploying, scaling, and managing containerized applications.
+- **Purpose**: Orchestration is essential for managing large-scale containerized applications in production environments.
+- **Key Points**:
+  - Automates scaling, load balancing, and managing containers.
+  - Kubernetes is more commonly used in production than Docker Swarm.
+
+### Docker Daemon
+
+- **Definition**: The background process that runs on the host and manages Docker containers, images, volumes, and networks.
+- **Purpose**: Executes Docker commands from the Docker CLI and manages Docker resources.
+- **Key Points**:
+  - The engine that powers Docker.
+  - Handles container lifecycle and image building.

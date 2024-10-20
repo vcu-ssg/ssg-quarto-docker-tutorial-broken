@@ -6,8 +6,8 @@ website:
   title: "CMSC408 - Docker Tutorial"
   navbar:
     left:
-      - href: background.qmd
-        text: Background
+      - href: fundamentals.qmd
+        text: Fundamentals
       - href: about.qmd
         text: About
 
