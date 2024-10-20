@@ -1,6 +1,16 @@
 ---
-title: index page
+title: CMSC 408 - Docker Tutorial
 ---
 
-this is the index page.
+Welcome to the docker tutorial!  This tutorial will discuss:
+
+1. [Installing](installing-docker-mac.qmd) docker and docker compose on your computer,
+2. [Selecting](selecting-base-image.qmd) a base image for your application(s),
+3. [Using](using-docker-compose.qmd) docker-compose to develop your application.
+
+At completion of this tutorial you should have a website and database running on your machine.
+
+[About](about.qmd) - talks about the motivation for this site and introduces the principle author.
+
+[Background](background.qmd) - provides background information on the tools used for this site.
 

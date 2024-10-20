@@ -1,0 +1,28 @@
+---
+title: Background
+---
+
+This tutorial introduces the student to containers, docker and docker compose.
+
+## **Containers**
+
+- **Containers** are lightweight, portable units of software that bundle an application and its dependencies (libraries, system tools, etc.) into a single package. This ensures that the application runs consistently across different environments (development, testing, production) without worrying about discrepancies in system configurations.
+- Unlike virtual machines, containers share the host machine's operating system, making them more resource-efficient while still isolating the application from the rest of the system.
+
+## **Docker**
+- **Docker** is an open-source platform that automates the deployment of applications inside containers. It simplifies the process of creating, managing, and running containers.
+- Docker uses **Docker images** as blueprints for containers. Images are read-only templates that define the application's environment, including the OS, libraries, and application code.
+- **Docker containers** are instances of Docker images. When you run an image, it creates a container that executes the application in the environment defined by the image.
+- Docker makes it easy to replicate and share applications, as well as to ensure consistency across different systems.
+
+## **Docker Compose**
+- **Docker Compose** is a tool used for defining and running multi-container Docker applications. It allows you to specify multiple services (like web servers, databases, etc.) in a single configuration file (`docker-compose.yml`).
+- With Docker Compose, you can start all services with a single command, manage them collectively, and ensure they interact as needed. This is particularly useful for applications that involve several components (e.g., a web server, a database, and a cache).
+  
+**Example:**
+For a typical web application, you might use Docker Compose to:
+- Run a web server (NGINX or Apache) in one container.
+- Run a database (MySQL or PostgreSQL) in another container.
+- Link the two containers so they can communicate.
+
+This setup allows developers to work in isolated, reproducible environments and simplifies managing complex applications.

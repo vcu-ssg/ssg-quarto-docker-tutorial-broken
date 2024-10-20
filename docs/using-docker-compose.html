@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>CMSC408 - Docker Tutorial - index page</title>
+<title>CMSC408 - Docker Tutorial - Using docker-compose</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -19,6 +19,40 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -89,7 +123,7 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link active" href="./index.html" aria-current="page"> 
+    <a class="nav-link" href="./index.html"> 
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
@@ -105,7 +139,7 @@ ul.task-list li input[type="checkbox"] {
 <span class="menu-text">Selecting-base</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./using-docker-compose.html"> 
+    <a class="nav-link active" href="./using-docker-compose.html" aria-current="page"> 
 <span class="menu-text">Using Docker-Compose</span></a>
   </li>  
   <li class="nav-item">
@@ -124,14 +158,21 @@ ul.task-list li input[type="checkbox"] {
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#create-a-docker-compose.yml-file" id="toc-create-a-docker-compose.yml-file" class="nav-link active" data-scroll-target="#create-a-docker-compose.yml-file">Create a <code>docker-compose.yml</code> File</a></li>
+  <li><a href="#build-and-run-containers" id="toc-build-and-run-containers" class="nav-link" data-scroll-target="#build-and-run-containers">Build and Run Containers</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">index page</h1>
+<h1 class="title">Using docker-compose</h1>
 </div>
 
 
@@ -148,17 +189,41 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>Welcome to the docker tutorial! This tutorial will discuss:</p>
-<ol type="1">
-<li><a href="./installing-docker-mac.html">Installing</a> docker and docker compose on your computer,</li>
-<li><a href="./selecting-base-image.html">Selecting</a> a base image for your application(s),</li>
-<li><a href="./using-docker-compose.html">Using</a> docker-compose to develop your application.</li>
-</ol>
-<p>At completion of this tutorial you should have a website and database running on your machine.</p>
-<p><a href="./about.html">About</a> - talks about the motivation for this site and introduces the principle author.</p>
-<p><a href="./background.html">Background</a> - provides background information on the tools used for this site.</p>
+<ul>
+<li>Docker Compose is a tool that lets you define and run multi-container applications. With one command, you can create and launch all the services defined in the <code>docker-compose.yml</code> file.</li>
+<li>If Docker Desktop is installed on your machines, Docker Compose should already be included. If not, they need to install it separately. You can check if it’s installed by running:</li>
+</ul>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>   <span class="ex">docker-compose</span> <span class="at">--version</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="create-a-docker-compose.yml-file" class="level2">
+<h2 class="anchored" data-anchor-id="create-a-docker-compose.yml-file">Create a <code>docker-compose.yml</code> File</h2>
+<ul>
+<li>Navigate to the root of your project where Dockerfile is also located, create a <code>docker-compose.yml</code> file. Below is a simple docker-compose.yml for a static site served by Nginx.</li>
+</ul>
+<div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>   <span class="ex">version:</span> <span class="st">'3.8'</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>   <span class="ex">services:</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>   <span class="ex">nginx:</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>      <span class="ex">image:</span> nginx:alpine</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>      <span class="ex">ports:</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>         <span class="ex">-</span> <span class="st">"8089:80"</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>      <span class="ex">volumes:</span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>         <span class="ex">-</span> ./my-folder:/usr/share/nginx/html</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="build-and-run-containers" class="level2">
+<h2 class="anchored" data-anchor-id="build-and-run-containers">Build and Run Containers</h2>
+<ul>
+<li>Run the command below in your terminal from the root of your project</li>
+</ul>
+<div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>   <span class="ex">docker-compose</span> up <span class="at">-d</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><img src="assets/docker-compose-run.png" class="img-fluid"></p>
+<ul>
+<li>The <code>-d</code> flag runs containers in the background.</li>
+<li>Open a web browser and navigate to http://localhost:<port>/ to verify that your service is running correctly.</port></li>
+<li>Adjust <port> based on your docker-compose.yml settings. In my example I use port 8089</port></li>
+<li>Use <code>docker-compose ps</code> to check the status of running services.</li>
+</ul>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

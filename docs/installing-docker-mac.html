@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>CMSC408 - Docker Tutorial - index page</title>
+<title>CMSC408 - Docker Tutorial - Installing Docker on Your Mac</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -19,6 +19,40 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -89,7 +123,7 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link active" href="./index.html" aria-current="page"> 
+    <a class="nav-link" href="./index.html"> 
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
@@ -97,7 +131,7 @@ ul.task-list li input[type="checkbox"] {
 <span class="menu-text">Background</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./installing-docker-mac.html"> 
+    <a class="nav-link active" href="./installing-docker-mac.html" aria-current="page"> 
 <span class="menu-text">Install-Mac</span></a>
   </li>  
   <li class="nav-item">
@@ -124,14 +158,23 @@ ul.task-list li input[type="checkbox"] {
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#download-docker-desktop-for-mac" id="toc-download-docker-desktop-for-mac" class="nav-link active" data-scroll-target="#download-docker-desktop-for-mac">1. Download Docker Desktop for Mac:</a></li>
+  <li><a href="#install-docker-desktop" id="toc-install-docker-desktop" class="nav-link" data-scroll-target="#install-docker-desktop">2. Install Docker Desktop:</a></li>
+  <li><a href="#verify-the-installation" id="toc-verify-the-installation" class="nav-link" data-scroll-target="#verify-the-installation">3. Verify the Installation:</a></li>
+  <li><a href="#run-a-test-container" id="toc-run-a-test-container" class="nav-link" data-scroll-target="#run-a-test-container">4. Run a Test Container:</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">index page</h1>
+<h1 class="title">Installing Docker on Your Mac</h1>
 </div>
 
 
@@ -148,17 +191,37 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>Welcome to the docker tutorial! This tutorial will discuss:</p>
-<ol type="1">
-<li><a href="./installing-docker-mac.html">Installing</a> docker and docker compose on your computer,</li>
-<li><a href="./selecting-base-image.html">Selecting</a> a base image for your application(s),</li>
-<li><a href="./using-docker-compose.html">Using</a> docker-compose to develop your application.</li>
-</ol>
-<p>At completion of this tutorial you should have a website and database running on your machine.</p>
-<p><a href="./about.html">About</a> - talks about the motivation for this site and introduces the principle author.</p>
-<p><a href="./background.html">Background</a> - provides background information on the tools used for this site.</p>
+<section id="download-docker-desktop-for-mac" class="level2">
+<h2 class="anchored" data-anchor-id="download-docker-desktop-for-mac">1. Download Docker Desktop for Mac:</h2>
+<ul>
+<li>Go to <a href="https://www.docker.com/">Docker Website</a></li>
+<li>Click on “Get Started” <img src="assets/get_started.png" class="img-fluid"></li>
+</ul>
+</section>
+<section id="install-docker-desktop" class="level2">
+<h2 class="anchored" data-anchor-id="install-docker-desktop">2. Install Docker Desktop:</h2>
+<p><img src="assets/get_started2.png" class="img-fluid"> - Open the downloaded <code>.dmg</code> file. - Drag the Docker icon to the Applications folder to install it. <img src="assets/get_started3.png" class="img-fluid"> - Open Docker from your Applications folder. - You may be prompted to enter your email, so follow the on-screen instructions. <img src="assets/get_started4.png" class="img-fluid"></p>
+</section>
+<section id="verify-the-installation" class="level2">
+<h2 class="anchored" data-anchor-id="verify-the-installation">3. Verify the Installation:</h2>
+<ul>
+<li><p>Open a terminal and type the following command to check if Docker is installed correctly:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">docker</span> <span class="at">--version</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+</ul>
+<p><img src="assets/get_started5.png" class="img-fluid"></p>
+</section>
+<section id="run-a-test-container" class="level2">
+<h2 class="anchored" data-anchor-id="run-a-test-container">4. Run a Test Container:</h2>
+<ul>
+<li><p>To ensure Docker is functioning properly, run a simple container like “Hello World”:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">docker</span> run hello-world</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<li><p>This command will download a test image and run it, outputting a message that confirms Docker is installed and working. <img src="assets/get_started6.png" class="img-fluid"></p></li>
+<li><p>If you run a Docker command like <code>docker run hello-world</code> for the first time and see a message saying, “Unable to find the image locally”, don’t worry! This just means the image isn’t on your machine yet.</p></li>
+<li><p>Docker will automatically start downloading the image from Docker Hub. Once the image is downloaded, it will run.</p></li>
+</ul>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

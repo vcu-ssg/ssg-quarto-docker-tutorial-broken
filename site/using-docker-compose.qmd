@@ -1,0 +1,41 @@
+---
+title: Using docker-compose
+---
+
+- Docker Compose is a tool that lets you define and run multi-container applications. With one command, you can create and launch all the services defined in the `docker-compose.yml` file.
+- If Docker Desktop is installed on your machines, Docker Compose should already be included. If not, they need to install it separately. You can check if it’s installed by running:
+
+```bash
+   docker-compose --version
+```
+
+## Create a `docker-compose.yml` File
+
+- Navigate to the root of your project where Dockerfile is also located, create a `docker-compose.yml` file. Below is a simple docker-compose.yml for a static site served by Nginx.
+
+```bash
+   version: '3.8'
+   services:
+   nginx:
+      image: nginx:alpine
+      ports:
+         - "8089:80"
+      volumes:
+         - ./my-folder:/usr/share/nginx/html
+```
+
+## Build and Run Containers
+
+- Run the command below in your terminal from the root of your project
+
+```bash
+   docker-compose up -d
+```
+
+![](assets/docker-compose-run.png)
+
+- The `-d` flag runs containers in the background.
+- Open a web browser and navigate to http://localhost:<port>/ to verify that your service is running correctly.
+- Adjust <port> based on your docker-compose.yml settings. In my example I use port 8089
+- Use `docker-compose ps` to check the status of running services.
+

@@ -2,4 +2,9 @@
 title: About page
 ---
 
-this is the about page.
+This tutorial was creating during the Fall 2024 semester by Huyen Huynh.
+
+Huyen is a MS graduate student at VCU and a graduate of VCU Computer Science in Spring 2024.
+
+
+

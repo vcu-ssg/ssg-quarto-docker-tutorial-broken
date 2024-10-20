@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>CMSC408 - Docker Tutorial - index page</title>
+<title>CMSC408 - Docker Tutorial - Background</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -89,11 +89,11 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link active" href="./index.html" aria-current="page"> 
+    <a class="nav-link" href="./index.html"> 
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./background.html"> 
+    <a class="nav-link active" href="./background.html" aria-current="page"> 
 <span class="menu-text">Background</span></a>
   </li>  
   <li class="nav-item">
@@ -124,14 +124,22 @@ ul.task-list li input[type="checkbox"] {
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#containers" id="toc-containers" class="nav-link active" data-scroll-target="#containers"><strong>Containers</strong></a></li>
+  <li><a href="#docker" id="toc-docker" class="nav-link" data-scroll-target="#docker"><strong>Docker</strong></a></li>
+  <li><a href="#docker-compose" id="toc-docker-compose" class="nav-link" data-scroll-target="#docker-compose"><strong>Docker Compose</strong></a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">index page</h1>
+<h1 class="title">Background</h1>
 </div>
 
 
@@ -148,17 +156,34 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>Welcome to the docker tutorial! This tutorial will discuss:</p>
-<ol type="1">
-<li><a href="./installing-docker-mac.html">Installing</a> docker and docker compose on your computer,</li>
-<li><a href="./selecting-base-image.html">Selecting</a> a base image for your application(s),</li>
-<li><a href="./using-docker-compose.html">Using</a> docker-compose to develop your application.</li>
-</ol>
-<p>At completion of this tutorial you should have a website and database running on your machine.</p>
-<p><a href="./about.html">About</a> - talks about the motivation for this site and introduces the principle author.</p>
-<p><a href="./background.html">Background</a> - provides background information on the tools used for this site.</p>
+<p>This tutorial introduces the student to containers, docker and docker compose.</p>
+<section id="containers" class="level2">
+<h2 class="anchored" data-anchor-id="containers"><strong>Containers</strong></h2>
+<ul>
+<li><strong>Containers</strong> are lightweight, portable units of software that bundle an application and its dependencies (libraries, system tools, etc.) into a single package. This ensures that the application runs consistently across different environments (development, testing, production) without worrying about discrepancies in system configurations.</li>
+<li>Unlike virtual machines, containers share the host machine’s operating system, making them more resource-efficient while still isolating the application from the rest of the system.</li>
+</ul>
+</section>
+<section id="docker" class="level2">
+<h2 class="anchored" data-anchor-id="docker"><strong>Docker</strong></h2>
+<ul>
+<li><strong>Docker</strong> is an open-source platform that automates the deployment of applications inside containers. It simplifies the process of creating, managing, and running containers.</li>
+<li>Docker uses <strong>Docker images</strong> as blueprints for containers. Images are read-only templates that define the application’s environment, including the OS, libraries, and application code.</li>
+<li><strong>Docker containers</strong> are instances of Docker images. When you run an image, it creates a container that executes the application in the environment defined by the image.</li>
+<li>Docker makes it easy to replicate and share applications, as well as to ensure consistency across different systems.</li>
+</ul>
+</section>
+<section id="docker-compose" class="level2">
+<h2 class="anchored" data-anchor-id="docker-compose"><strong>Docker Compose</strong></h2>
+<ul>
+<li><strong>Docker Compose</strong> is a tool used for defining and running multi-container Docker applications. It allows you to specify multiple services (like web servers, databases, etc.) in a single configuration file (<code>docker-compose.yml</code>).</li>
+<li>With Docker Compose, you can start all services with a single command, manage them collectively, and ensure they interact as needed. This is particularly useful for applications that involve several components (e.g., a web server, a database, and a cache).</li>
+</ul>
+<p><strong>Example:</strong> For a typical web application, you might use Docker Compose to: - Run a web server (NGINX or Apache) in one container. - Run a database (MySQL or PostgreSQL) in another container. - Link the two containers so they can communicate.</p>
+<p>This setup allows developers to work in isolated, reproducible environments and simplifies managing complex applications.</p>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

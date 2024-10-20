@@ -3,13 +3,19 @@ project:
   output-dir: ../docs
 
 website:
-  title: "CMSC408 - Docker Setup"
+  title: "CMSC408 - Docker Tutorial"
   navbar:
     left:
       - href: index.qmd
         text: Home
-      - href: Tutorial.qmd
-        text: Tutorial
+      - href: background.qmd
+        text: Background
+      - href: installing-docker-mac.qmd
+        text: Install-Mac
+      - href: selecting-base-image.qmd
+        text: Selecting-base
+      - href: using-docker-compose.qmd
+        text: Using Docker-Compose
       - href: about.qmd
         text: About
 
