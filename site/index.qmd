@@ -19,6 +19,9 @@ The web site contains a bunch of docker examples, as listed below.  These links 
 directly to the GITHUB repo and the respective README files.
 
 * [nginx-static-example](https://github.com/vcu-ssg/ssg-quarto-docker-tutorial/tree/main/site/nginx-static-example)
+* [nginx-static-volume](https://github.com/vcu-ssg/ssg-quarto-docker-tutorial/tree/main/site/nginx-static-volume)
+* [apache-php-remote-mysql](https://github.com/vcu-ssg/ssg-quarto-docker-tutorial/tree/main/site/apache-php-remote-mysql)
+* [production-example-1](https://github.com/vcu-ssg/ssg-quarto-docker-tutorial/tree/main/site/production-example-1)
 
 ## Other info
 
