@@ -9,6 +9,35 @@ assumes that you're comfortable with [docker fundamentals](https://vcu-ssg.githu
 
 *./README.md* this file!
 
+## Learning more about NGINX and docker
+
+* <https://www.papertrail.com/solution/guides/nginx/>
+* <https://nginx.org/en/>
+* <https://www.docker.com/blog/how-to-use-the-official-nginx-docker-image/>
+* <https://www.youtube.com/watch?v=qNl3QRny-v4>
+* <https://medium.com/@bm54cloud/docker-basics-how-to-deploy-nginx-in-a-docker-container-10b74dda5a08>
+  
+
+## Example folder structure
+
+Below is the file structure.  If you want to run this example, you need a folder called *./site* that contains
+a simple web site, and the *Dockerfile* in a folder as shown below.  The commands in this *README.md* assumes
+that you're running the command in the same folder as the *Dockerfile*.
+
+```shell
+.\
+│
+├──site\
+│   ├──index.html
+│   ├──logo.png
+│   ├──script.js
+│   └──styles.css
+│
+├──Dockerfile
+└──README.md
+```
+
+
 ## Building the container
 
 Before you can run a container you need to build it.  The following command

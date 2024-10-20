@@ -15,7 +15,10 @@ At completion of this tutorial you should have a website and database running on
 
 ## Examples
 
-* [nginx-static-example](https://github.com/vcu-ssg/ssg-docker-quarto-tutorial/)
+The web site contains a bunch of docker examples, as listed below.  These links take you 
+directly to the GITHUB repo and the respective README files.
+
+* [nginx-static-example](https://github.com/vcu-ssg/ssg-quarto-docker-tutorial/tree/main/site/nginx-static-example)
 
 ## Other info
 
@@ -23,3 +26,4 @@ At completion of this tutorial you should have a website and database running on
 
 * [About](about.qmd) - talks about the motivation for this site and introduces the principle author.
 
+* [GITHUB repo](https://vcu-ssg.github.io/ssg-quarto-docker-tutorial/) - follow this link to get to the GITHUB repo.

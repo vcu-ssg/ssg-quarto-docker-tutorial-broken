@@ -173,22 +173,27 @@ ul.task-list li input[type="checkbox"] {
    
   <ul>
   <li><a href="#motivation" id="toc-motivation" class="nav-link active" data-scroll-target="#motivation">Motivation</a></li>
-  <li><a href="#core-concepts" id="toc-core-concepts" class="nav-link" data-scroll-target="#core-concepts">Core concepts</a></li>
-  <li><a href="#getting-started" id="toc-getting-started" class="nav-link" data-scroll-target="#getting-started">Getting started</a>
+  <li><a href="#core-concepts" id="toc-core-concepts" class="nav-link" data-scroll-target="#core-concepts">Core concepts</a>
+  <ul class="collapse">
+  <li><a href="#getting-started" id="toc-getting-started" class="nav-link" data-scroll-target="#getting-started">Getting Started</a></li>
+  <li><a href="#docker-environment" id="toc-docker-environment" class="nav-link" data-scroll-target="#docker-environment">Docker environment</a></li>
+  <li><a href="#docker-control" id="toc-docker-control" class="nav-link" data-scroll-target="#docker-control">Docker control</a></li>
+  </ul></li>
+  <li><a href="#getting-started-1" id="toc-getting-started-1" class="nav-link" data-scroll-target="#getting-started-1">Getting started</a>
   <ul class="collapse">
   <li><a href="#containers" id="toc-containers" class="nav-link" data-scroll-target="#containers">Containers</a></li>
   <li><a href="#images" id="toc-images" class="nav-link" data-scroll-target="#images">Images</a></li>
   <li><a href="#dockerfile" id="toc-dockerfile" class="nav-link" data-scroll-target="#dockerfile">Dockerfile</a></li>
   <li><a href="#docker-cli" id="toc-docker-cli" class="nav-link" data-scroll-target="#docker-cli">Docker CLI</a></li>
   </ul></li>
-  <li><a href="#docker-environment" id="toc-docker-environment" class="nav-link" data-scroll-target="#docker-environment">Docker Environment</a>
+  <li><a href="#docker-environment-1" id="toc-docker-environment-1" class="nav-link" data-scroll-target="#docker-environment-1">Docker Environment</a>
   <ul class="collapse">
   <li><a href="#volumes" id="toc-volumes" class="nav-link" data-scroll-target="#volumes">Volumes</a></li>
   <li><a href="#networks" id="toc-networks" class="nav-link" data-scroll-target="#networks">Networks</a></li>
   <li><a href="#registries" id="toc-registries" class="nav-link" data-scroll-target="#registries">Registries</a></li>
   <li><a href="#services" id="toc-services" class="nav-link" data-scroll-target="#services">Services</a></li>
   </ul></li>
-  <li><a href="#docker-control" id="toc-docker-control" class="nav-link" data-scroll-target="#docker-control">Docker control</a>
+  <li><a href="#docker-control-1" id="toc-docker-control-1" class="nav-link" data-scroll-target="#docker-control-1">Docker control</a>
   <ul class="collapse">
   <li><a href="#docker-compose" id="toc-docker-compose" class="nav-link" data-scroll-target="#docker-compose">Docker Compose</a></li>
   <li><a href="#docker-swarm-and-kubernetes-orchestration" id="toc-docker-swarm-and-kubernetes-orchestration" class="nav-link" data-scroll-target="#docker-swarm-and-kubernetes-orchestration">Docker Swarm and Kubernetes (Orchestration)</a></li>
@@ -227,8 +232,9 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="core-concepts" class="level2">
 <h2 class="anchored" data-anchor-id="core-concepts">Core concepts</h2>
-<p>The following tables provides a brief listing of core or fundamental docker concepts.</p>
-<p><strong>Getting Started</strong></p>
+<p>The following tables summarize core or fundamental docker concepts. Later sections of this document provide more details.</p>
+<section id="getting-started" class="level3">
+<h3 class="anchored" data-anchor-id="getting-started">Getting Started</h3>
 <table class="table">
 <colgroup>
 <col style="width: 28%">
@@ -259,7 +265,9 @@ ul.task-list li input[type="checkbox"] {
 </tr>
 </tbody>
 </table>
-<p><strong>Docker environment</strong></p>
+</section>
+<section id="docker-environment" class="level3">
+<h3 class="anchored" data-anchor-id="docker-environment">Docker environment</h3>
 <table class="table">
 <colgroup>
 <col style="width: 28%">
@@ -290,13 +298,39 @@ ul.task-list li input[type="checkbox"] {
 </tr>
 </tbody>
 </table>
-<p><strong>Docker control</strong></p>
-<div class="line-block"><strong>Docker Compose</strong> | Manages multi-container applications with services, networks, and volumes. |<br>
-<strong>Docker Swarm / Kubernetes</strong> | Orchestrates large-scale container deployments in production. |<br>
-<strong>Docker Daemon</strong> | Background process managing Docker resources. |</div>
 </section>
-<section id="getting-started" class="level2">
-<h2 class="anchored" data-anchor-id="getting-started">Getting started</h2>
+<section id="docker-control" class="level3">
+<h3 class="anchored" data-anchor-id="docker-control">Docker control</h3>
+<table class="table">
+<colgroup>
+<col style="width: 28%">
+<col style="width: 71%">
+</colgroup>
+<thead>
+<tr class="header">
+<th><strong>Concept</strong></th>
+<th><strong>Purpose</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Docker Compose</strong></td>
+<td>Manages multi-container applications with services, networks, and volumes.</td>
+</tr>
+<tr class="even">
+<td><strong>Docker Swarm / Kubernetes</strong></td>
+<td>Orchestrates large-scale container deployments in production.</td>
+</tr>
+<tr class="odd">
+<td><strong>Docker Daemon</strong></td>
+<td>Background process managing Docker resources.</td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+<section id="getting-started-1" class="level2">
+<h2 class="anchored" data-anchor-id="getting-started-1">Getting started</h2>
 <p>To get started with Docker, you first build or pull a Docker image, which is a template containing your application and its dependencies, and then create containers from that image to run the application. Using a Dockerfile, you can automate the image-building process, and with the Docker CLI, you can manage images, containers, networks, and other Docker resources through simple commands.</p>
 <section id="containers" class="level3">
 <h3 class="anchored" data-anchor-id="containers">Containers</h3>
@@ -350,8 +384,8 @@ ul.task-list li input[type="checkbox"] {
 </ul>
 </section>
 </section>
-<section id="docker-environment" class="level2">
-<h2 class="anchored" data-anchor-id="docker-environment">Docker Environment</h2>
+<section id="docker-environment-1" class="level2">
+<h2 class="anchored" data-anchor-id="docker-environment-1">Docker Environment</h2>
 <p>Docker environment concepts such as volumes and networks ensure that containers have persistent storage and can communicate with each other or external systems. Registries store and distribute Docker images, while services allow for scalable and distributed container deployments, especially in orchestrated environments like Docker Swarm or Kubernetes.</p>
 <section id="volumes" class="level3">
 <h3 class="anchored" data-anchor-id="volumes">Volumes</h3>
@@ -404,8 +438,8 @@ ul.task-list li input[type="checkbox"] {
 </ul>
 </section>
 </section>
-<section id="docker-control" class="level2">
-<h2 class="anchored" data-anchor-id="docker-control">Docker control</h2>
+<section id="docker-control-1" class="level2">
+<h2 class="anchored" data-anchor-id="docker-control-1">Docker control</h2>
 <p>Docker control programs like the Docker daemon manage the core operations of containers, images, and networking, acting as the engine that powers Docker. Tools like Docker Compose and Kubernetes provide higher-level orchestration, with Docker Compose managing multi-container applications and Kubernetes handling large-scale container deployment, scaling, and management across clusters.</p>
 <section id="docker-compose" class="level3">
 <h3 class="anchored" data-anchor-id="docker-compose">Docker Compose</h3>

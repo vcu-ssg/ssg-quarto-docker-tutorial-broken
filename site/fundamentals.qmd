@@ -13,9 +13,9 @@ Docker was created in 2013 by Solomon Hykes, during his time at the company dotC
 
 ## Core concepts
 
-The following tables provides a brief listing of core or fundamental docker concepts.
+The following tables summarize core or fundamental docker concepts. Later sections of this document provide more details.
 
-**Getting Started**
+### Getting Started
 
 | **Concept**           | **Purpose**                                               |
 |-----------------------|-----------------------------------------------------------|
@@ -24,8 +24,7 @@ The following tables provides a brief listing of core or fundamental docker conc
 | **Dockerfile**        | Instructions to build images for reproducible environments. |
 | **Docker CLI**        | Main interface for managing Docker resources.              |
 
-
-**Docker environment**
+### Docker environment
 
 | **Concept**           | **Purpose**                                               |
 |-----------------------|-----------------------------------------------------------|
@@ -34,12 +33,13 @@ The following tables provides a brief listing of core or fundamental docker conc
 | **Registries**        | Stores and distributes Docker images (e.g., Docker Hub).   |
 | **Services**          | Defines scalable and distributed container applications.   |
 
-**Docker control**
+### Docker control
 
+| **Concept**           | **Purpose**                                               |
+|-----------------------|-----------------------------------------------------------|
 | **Docker Compose**    | Manages multi-container applications with services, networks, and volumes. |
 | **Docker Swarm / Kubernetes** | Orchestrates large-scale container deployments in production. |
 | **Docker Daemon**     | Background process managing Docker resources.              |
-
 
 ## Getting started
 
