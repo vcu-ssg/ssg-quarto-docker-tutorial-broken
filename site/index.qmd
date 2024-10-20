@@ -10,7 +10,7 @@ Welcome to the docker tutorial!  This tutorial will discuss:
 
 At completion of this tutorial you should have a website and database running on your machine.
 
-[About](about.qmd) - talks about the motivation for this site and introduces the principle author.
-
 [Background](background.qmd) - provides background information on the tools used for this site.
+
+[About](about.qmd) - talks about the motivation for this site and introduces the principle author.
 
