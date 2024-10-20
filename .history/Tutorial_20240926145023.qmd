@@ -1,5 +1,0 @@
-# Hello 
-
-Step 1: Installing Docker on Your Mac
-1. Download Docker Desktop for Mac: 
-   - Go to the 

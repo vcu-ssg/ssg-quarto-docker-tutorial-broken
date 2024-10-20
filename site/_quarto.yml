@@ -10,14 +10,19 @@ website:
         text: Home
       - href: background.qmd
         text: Background
+      - href: about.qmd
+        text: About
+
+  sidebar:
+    style: "docked"
+    search: true
+    contents:
       - href: installing-docker-mac.qmd
         text: Install-Mac
       - href: selecting-base-image.qmd
         text: Selecting-base
       - href: using-docker-compose.qmd
         text: Using Docker-Compose
-      - href: about.qmd
-        text: About
 
 format:
   html:

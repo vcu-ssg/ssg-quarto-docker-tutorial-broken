@@ -2,9 +2,18 @@
 title: About page
 ---
 
+## About the author
+
 This tutorial was creating during the Fall 2024 semester by Huyen Huynh.
 
 Huyen is a MS graduate student at VCU and a graduate of VCU Computer Science in Spring 2024.
 
+## About the site
 
+The site is built using [quarto](https://quarto.org).
 
+The site is delivered using [github-pages](https://pages.github.com/)
+
+Quarto and gh-pages [work together](https://quarto.org/docs/publishing/github-pages.html) very nicely!
+
+[Source for this site](https://github.com/vcu-ssg/ssg-quarto-docker-tutorial) is maintained on Github.

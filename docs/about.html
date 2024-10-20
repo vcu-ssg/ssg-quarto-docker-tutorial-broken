@@ -71,7 +71,7 @@ ul.task-list li input[type="checkbox"] {
 <link rel="stylesheet" href="styles.css">
 </head>
 
-<body class="nav-fixed">
+<body class="nav-sidebar docked nav-fixed">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -97,18 +97,6 @@ ul.task-list li input[type="checkbox"] {
 <span class="menu-text">Background</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./installing-docker-mac.html"> 
-<span class="menu-text">Install-Mac</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./selecting-base-image.html"> 
-<span class="menu-text">Selecting-base</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./using-docker-compose.html"> 
-<span class="menu-text">Using Docker-Compose</span></a>
-  </li>  
-  <li class="nav-item">
     <a class="nav-link active" href="./about.html" aria-current="page"> 
 <span class="menu-text">About</span></a>
   </li>  
@@ -118,13 +106,63 @@ ul.task-list li input[type="checkbox"] {
 </div>
       </div> <!-- /container-fluid -->
     </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">About page</li></ol></nav>
+        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
 </header>
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./installing-docker-mac.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Install-Mac</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./selecting-base-image.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Selecting-base</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./using-docker-compose.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Using Docker-Compose</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#about-the-author" id="toc-about-the-author" class="nav-link active" data-scroll-target="#about-the-author">About the author</a></li>
+  <li><a href="#about-the-site" id="toc-about-the-site" class="nav-link" data-scroll-target="#about-the-site">About the site</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -148,10 +186,20 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
+<section id="about-the-author" class="level2">
+<h2 class="anchored" data-anchor-id="about-the-author">About the author</h2>
 <p>This tutorial was creating during the Fall 2024 semester by Huyen Huynh.</p>
 <p>Huyen is a MS graduate student at VCU and a graduate of VCU Computer Science in Spring 2024.</p>
+</section>
+<section id="about-the-site" class="level2">
+<h2 class="anchored" data-anchor-id="about-the-site">About the site</h2>
+<p>The site is built using <a href="https://quarto.org">quarto</a>.</p>
+<p>The site is delivered using <a href="https://pages.github.com/">github-pages</a></p>
+<p>Quarto and gh-pages <a href="https://quarto.org/docs/publishing/github-pages.html">work together</a> very nicely!</p>
+<p><a href="https://github.com/vcu-ssg/ssg-quarto-docker-tutorial">Source for this site</a> is maintained on Github.</p>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
