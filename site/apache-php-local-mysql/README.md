@@ -1,13 +1,14 @@
 # Apache-PHP docker-compose example
 
-This example is primarily for development.  You would probably prefer to run nginx as a load balancer and reverse proxy,
-a database locally, and a web site with files inside the container.
+This example is primarily for development.
 
 In this example, we use docker and docker-compose to locally host an apache/php server 
-and local web page.  The web page connects to the CMSC508.COM mysql server and lists
-all the tables in the HR database.
+and local web page.  Further, the database is running locally in a container, initialized with the DDL-SQL file found
+in the .db folder.  Finally, a phpmyadmin container is running to provide management of the database.
 
 *./site* - this folder contains the web site.  For this example, it's a simple PHP page that lists table in a web site.
+
+*./db* - this folder contains the SQL file used to initialize the database.  It is run once when the container is created.
 
 *./docker-apache-php* - a docker file that creates the necessary apache-php image from the docker registry.
 
@@ -29,4 +30,5 @@ Make sure that `.env` is listed in your `.gitignore` so that any `.env` files ar
 docker-compose up -d
 ```
 
-If all goes well, you can visit: <http://localhost:8080> to see a listing tables in the HR database.
+If all goes well, you can visit: <http://localhost:8080> to see a listing tables in the HR database. `phymyadmin` will be available at <http://localhost:8081>.
+
