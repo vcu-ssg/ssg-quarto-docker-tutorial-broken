@@ -7,11 +7,16 @@ services:
     container_name: apache-php-container
     ports:
       - "8080:80" # Map port 8080 on the host to port 80 in the container
+
+    ## These credentials MUST be stored in a .env file IN THE SAME FOLDER
+    ## as docker-compose.yml.  This is a docker-compose issue.
+    ## While OK for development, this is NOT GOOD for production.
+    
     environment:
-      - MYSQL_HOST=cmsc508.com
-      - MYSQL_USER=24fa_jdleonard
-      - MYSQL_PASSWORD=Shout4_jdleonard_JOY
-      - MYSQL_DATABASE=24fa_hr_24fa_jdleonard
+      - MYSQL_HOST=${DOCKER_DB_HOST}
+      - MYSQL_USER=${DOCKER_DB_USER}
+      - MYSQL_PASSWORD=${DOCKER_DB_PASS}
+      - MYSQL_DATABASE=${DOCKER_DB_DBNAME}
     volumes:
       - ./site:/var/www/html
 
