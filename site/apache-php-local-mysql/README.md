@@ -17,6 +17,22 @@ to the web server root, and connects our local port 8080 to the web server port 
 
 *./env-sample* - a sample .env file.  Copy this file to `.env` and edit it as necessary.
 
+## Folder structure
+
+```
+.\
+├──db\
+│   └──my-ddl.sql
+├──site\
+│   ├──index.php
+│   └──show-table.php
+├──.env
+├──.env-sample
+├──docker-apache-php
+├──docker-compose.yml
+└──README.md
+```
+
 ## Create a local .env file
 
 Docker compose can only load environment variables from a `.env` file stored IN THE SAME FOLDER as `docker-compose.yml`. To
