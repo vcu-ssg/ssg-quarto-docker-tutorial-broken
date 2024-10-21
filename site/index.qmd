@@ -18,15 +18,15 @@ At completion of this tutorial you should have a website and database running on
 The web site contains a bunch of docker examples, as listed below.  These links take you 
 directly to the GITHUB repo and the respective README files.
 
-* [nginx-static-example](https://github.com/vcu-ssg/ssg-quarto-docker-tutorial/tree/main/site/nginx-static-example) - creates a simple, static web server with the html file stored inside the container.
+* [nginx-static-example](https://github.com/vcu-ssg/ssg-quarto-docker-tutorial/tree/main/site/example-nginx-static-example) - creates a simple, static web server with the html file stored inside the container.
 
-* [nginx-static-volume](https://github.com/vcu-ssg/ssg-quarto-docker-tutorial/tree/main/site/nginx-static-volume) - creates a simple web server container with the html files stored on your local disk.
+* [nginx-static-volume](https://github.com/vcu-ssg/ssg-quarto-docker-tutorial/tree/main/site/example-nginx-static-volume) - creates a simple web server container with the html files stored on your local disk.
 
-* [apache-php-remote-mysql](https://github.com/vcu-ssg/ssg-quarto-docker-tutorial/tree/main/site/apache-php-remote-mysql) - creates a local apache web server serving html/php pages from your local disk, connected to cmsc508.com using your username and password.
+* [apache-php-remote-mysql](https://github.com/vcu-ssg/ssg-quarto-docker-tutorial/tree/main/site/example-apache-php-remote-mysql) - creates a local apache web server serving html/php pages from your local disk, connected to cmsc508.com using your username and password.
 
-* [apache-php-local-mysql](https://github.com/vcu-ssg/ssg-quarto-docker-tutorial/tree/main/site/apache-php-local-mysql) - creates a local apache setb server serving html/php pages from your local disk, connected to a locally running mysql DB and locally running phpmyadmin.
+* [apache-php-local-mysql](https://github.com/vcu-ssg/ssg-quarto-docker-tutorial/tree/main/site/example-apache-php-local-mysql) - creates a local apache setb server serving html/php pages from your local disk, connected to a locally running mysql DB and locally running phpmyadmin.
 
-* [production-example-1](https://github.com/vcu-ssg/ssg-quarto-docker-tutorial/tree/main/site/production-example-1) - creates a localling running nginx load balancer and reverse proxy, apache-php server, mysql database and phpmyadmin all talking together.
+* [production-example-1](https://github.com/vcu-ssg/ssg-quarto-docker-tutorial/tree/main/site/example-production-example-1) - creates a localling running nginx load balancer and reverse proxy, apache-php server, mysql database and phpmyadmin all talking together.
 
 ## Other info
 

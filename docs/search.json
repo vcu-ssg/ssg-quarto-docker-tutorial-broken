@@ -100,6 +100,27 @@
     "text": "Welcome to the docker tutorial! This tutorial will discuss:\nAt completion of this tutorial you should have a website and database running on your machine."
   },
   {
+    "objectID": "index.html#getting-started",
+    "href": "index.html#getting-started",
+    "title": "CMSC 408 - Docker Tutorial",
+    "section": "Getting started",
+    "text": "Getting started\n\nFundamentals, providing just enough docker vocabulary to be dangerous,\nInstalling docker and docker compose on your computer,\nSelecting a base image for your application(s),\nUsing docker-compose to develop your application."
+  },
+  {
+    "objectID": "index.html#examples",
+    "href": "index.html#examples",
+    "title": "CMSC 408 - Docker Tutorial",
+    "section": "Examples",
+    "text": "Examples\nThe web site contains a bunch of docker examples, as listed below. These links take you directly to the GITHUB repo and the respective README files.\n\nnginx-static-example - creates a simple, static web server with the html file stored inside the container.\nnginx-static-volume - creates a simple web server container with the html files stored on your local disk.\napache-php-remote-mysql - creates a local apache web server serving html/php pages from your local disk, connected to cmsc508.com using your username and password.\napache-php-local-mysql - creates a local apache setb server serving html/php pages from your local disk, connected to a locally running mysql DB and locally running phpmyadmin.\nproduction-example-1 - creates a localling running nginx load balancer and reverse proxy, apache-php server, mysql database and phpmyadmin all talking together."
+  },
+  {
+    "objectID": "index.html#other-info",
+    "href": "index.html#other-info",
+    "title": "CMSC 408 - Docker Tutorial",
+    "section": "Other info",
+    "text": "Other info\n\nFundamentals, providing just enough docker vocabulary to be dangerous,\nAbout - talks about the motivation for this site and introduces the principle author.\nGITHUB repo - follow this link to get to the GITHUB repo."
+  },
+  {
     "objectID": "background.html",
     "href": "background.html",
     "title": "Background",
@@ -170,22 +191,22 @@
     "text": "Core concepts\nThe following tables summarize core or fundamental docker concepts. Later sections of this document provide more details.\n\nGetting Started\n\n\n\n\n\n\n\nConcept\nPurpose\n\n\n\n\nContainers\nRunning instance of an image; core unit of Docker.\n\n\nImages\nBlueprint for containers, containing application and dependencies.\n\n\nDockerfile\nInstructions to build images for reproducible environments.\n\n\nDocker CLI\nMain interface for managing Docker resources.\n\n\n\n\n\nDocker environment\n\n\n\n\n\n\n\nConcept\nPurpose\n\n\n\n\nVolumes\nPersistent storage for containers.\n\n\nNetworks\nManages communication between containers.\n\n\nRegistries\nStores and distributes Docker images (e.g., Docker Hub).\n\n\nServices\nDefines scalable and distributed container applications.\n\n\n\n\n\nDocker control\n\n\n\n\n\n\n\nConcept\nPurpose\n\n\n\n\nDocker Compose\nManages multi-container applications with services, networks, and volumes.\n\n\nDocker Swarm / Kubernetes\nOrchestrates large-scale container deployments in production.\n\n\nDocker Daemon\nBackground process managing Docker resources."
   },
   {
-    "objectID": "fundamentals.html#getting-started",
-    "href": "fundamentals.html#getting-started",
+    "objectID": "fundamentals.html#getting-started-1",
+    "href": "fundamentals.html#getting-started-1",
     "title": "Docker fundamentals",
     "section": "Getting started",
     "text": "Getting started\nTo get started with Docker, you first build or pull a Docker image, which is a template containing your application and its dependencies, and then create containers from that image to run the application. Using a Dockerfile, you can automate the image-building process, and with the Docker CLI, you can manage images, containers, networks, and other Docker resources through simple commands.\n\nContainers\n\nDefinition: A container is a running instance of a Docker image. It provides an isolated environment to run applications, with their own filesystem, networking, and processes, but shares the host system’s kernel.\nPurpose: Containers are the core concept of Docker, representing live applications running in isolated environments.\nKey Points:\n\nCan be started, stopped, and removed.\nProvides a consistent environment across development, testing, and production.\nLightweight compared to virtual machines.\n\n\n\n\nImages\n\nDefinition: A Docker image is a read-only template that contains the application, along with its dependencies and environment configurations.\nPurpose: Images are the blueprint for creating containers, defining everything needed to run an application.\nKey Points:\n\nCan be built from a Dockerfile.\nImmutable and reusable.\nCan be shared via Docker Hub or private registries.\n\n\n\n\nDockerfile\n\nDefinition: A text file containing the instructions to build a Docker image.\nPurpose: Automates the creation of images by defining the application, its dependencies, and how to configure it.\nKey Points:\n\nProvides reproducibility for building images.\nEach instruction adds a new layer to the image.\nTypically starts with a base image and adds application-specific instructions.\n\n\n\n\nDocker CLI\n\nDefinition: The command-line interface used to interact with Docker.\nPurpose: Allows users to issue commands to the Docker daemon to manage containers, images, networks, volumes, etc.\nKey Points:\n\nMain interface for interacting with Docker.\nAllows building images, running containers, and managing Docker resources."
   },
   {
-    "objectID": "fundamentals.html#docker-environment",
-    "href": "fundamentals.html#docker-environment",
+    "objectID": "fundamentals.html#docker-environment-1",
+    "href": "fundamentals.html#docker-environment-1",
     "title": "Docker fundamentals",
     "section": "Docker Environment",
     "text": "Docker Environment\nDocker environment concepts such as volumes and networks ensure that containers have persistent storage and can communicate with each other or external systems. Registries store and distribute Docker images, while services allow for scalable and distributed container deployments, especially in orchestrated environments like Docker Swarm or Kubernetes.\n\nVolumes\n\nDefinition: A way to persist data generated or used by containers.\nPurpose: Provides persistent storage that is independent of the container lifecycle.\nKey Points:\n\nUseful for databases and applications needing persistent state.\nCan be shared across multiple containers.\nData is stored outside the container’s filesystem.\n\n\n\n\nNetworks\n\nDefinition: Enables communication between Docker containers or between containers and the outside world.\nPurpose: Provides the ability to isolate, expose, and manage how containers communicate.\nKey Points:\n\nContainers on the same network can communicate using their names.\nSeveral types of networks like bridge, host, and overlay.\n\n\n\n\nRegistries\n\nDefinition: A storage and distribution system for Docker images, such as Docker Hub.\nPurpose: Enables sharing and downloading Docker images, either publicly or privately.\nKey Points:\n\nDocker Hub is the default public registry.\nPrivate registries can be used for internal projects.\nImages are pushed and pulled from registries.\n\n\n\n\nServices\n\nDefinition: A higher-level abstraction that defines how containers should run in a Docker Swarm or Kubernetes cluster.\nPurpose: Used to scale containers across multiple hosts and manage distributed containerized applications.\nKey Points:\n\nDefines replicas (multiple instances) of containers.\nUsed in orchestration environments like Docker Swarm and Kubernetes."
   },
   {
-    "objectID": "fundamentals.html#docker-control",
-    "href": "fundamentals.html#docker-control",
+    "objectID": "fundamentals.html#docker-control-1",
+    "href": "fundamentals.html#docker-control-1",
     "title": "Docker fundamentals",
     "section": "Docker control",
     "text": "Docker control\nDocker control programs like the Docker daemon manage the core operations of containers, images, and networking, acting as the engine that powers Docker. Tools like Docker Compose and Kubernetes provide higher-level orchestration, with Docker Compose managing multi-container applications and Kubernetes handling large-scale container deployment, scaling, and management across clusters.\n\nDocker Compose\n\nDefinition: A tool to define and manage multi-container Docker applications via a docker-compose.yml file.\nPurpose: Simplifies running multi-container applications by managing containers, networks, and volumes together.\nKey Points:\n\nDefines services and how they interact.\nEnables easy scaling and management of containerized apps.\nGreat for development and testing environments.\n\n\n\n\nDocker Swarm and Kubernetes (Orchestration)\n\nDocker Swarm: Docker’s native clustering and orchestration tool (less commonly used now).\nKubernetes: An open-source orchestration platform that automates deploying, scaling, and managing containerized applications.\nPurpose: Orchestration is essential for managing large-scale containerized applications in production environments.\nKey Points:\n\nAutomates scaling, load balancing, and managing containers.\nKubernetes is more commonly used in production than Docker Swarm.\n\n\n\n\nDocker Daemon\n\nDefinition: The background process that runs on the host and manages Docker containers, images, volumes, and networks.\nPurpose: Executes Docker commands from the Docker CLI and manages Docker resources.\nKey Points:\n\nThe engine that powers Docker.\nHandles container lifecycle and image building."
@@ -271,47 +292,5 @@
       "Fundamentals",
       "Selecting-base"
     ]
-  },
-  {
-    "objectID": "fundamentals.html#docker-control-1",
-    "href": "fundamentals.html#docker-control-1",
-    "title": "Docker fundamentals",
-    "section": "Docker control",
-    "text": "Docker control\nDocker control programs like the Docker daemon manage the core operations of containers, images, and networking, acting as the engine that powers Docker. Tools like Docker Compose and Kubernetes provide higher-level orchestration, with Docker Compose managing multi-container applications and Kubernetes handling large-scale container deployment, scaling, and management across clusters.\n\nDocker Compose\n\nDefinition: A tool to define and manage multi-container Docker applications via a docker-compose.yml file.\nPurpose: Simplifies running multi-container applications by managing containers, networks, and volumes together.\nKey Points:\n\nDefines services and how they interact.\nEnables easy scaling and management of containerized apps.\nGreat for development and testing environments.\n\n\n\n\nDocker Swarm and Kubernetes (Orchestration)\n\nDocker Swarm: Docker’s native clustering and orchestration tool (less commonly used now).\nKubernetes: An open-source orchestration platform that automates deploying, scaling, and managing containerized applications.\nPurpose: Orchestration is essential for managing large-scale containerized applications in production environments.\nKey Points:\n\nAutomates scaling, load balancing, and managing containers.\nKubernetes is more commonly used in production than Docker Swarm.\n\n\n\n\nDocker Daemon\n\nDefinition: The background process that runs on the host and manages Docker containers, images, volumes, and networks.\nPurpose: Executes Docker commands from the Docker CLI and manages Docker resources.\nKey Points:\n\nThe engine that powers Docker.\nHandles container lifecycle and image building."
-  },
-  {
-    "objectID": "fundamentals.html#getting-started-1",
-    "href": "fundamentals.html#getting-started-1",
-    "title": "Docker fundamentals",
-    "section": "Getting started",
-    "text": "Getting started\nTo get started with Docker, you first build or pull a Docker image, which is a template containing your application and its dependencies, and then create containers from that image to run the application. Using a Dockerfile, you can automate the image-building process, and with the Docker CLI, you can manage images, containers, networks, and other Docker resources through simple commands.\n\nContainers\n\nDefinition: A container is a running instance of a Docker image. It provides an isolated environment to run applications, with their own filesystem, networking, and processes, but shares the host system’s kernel.\nPurpose: Containers are the core concept of Docker, representing live applications running in isolated environments.\nKey Points:\n\nCan be started, stopped, and removed.\nProvides a consistent environment across development, testing, and production.\nLightweight compared to virtual machines.\n\n\n\n\nImages\n\nDefinition: A Docker image is a read-only template that contains the application, along with its dependencies and environment configurations.\nPurpose: Images are the blueprint for creating containers, defining everything needed to run an application.\nKey Points:\n\nCan be built from a Dockerfile.\nImmutable and reusable.\nCan be shared via Docker Hub or private registries.\n\n\n\n\nDockerfile\n\nDefinition: A text file containing the instructions to build a Docker image.\nPurpose: Automates the creation of images by defining the application, its dependencies, and how to configure it.\nKey Points:\n\nProvides reproducibility for building images.\nEach instruction adds a new layer to the image.\nTypically starts with a base image and adds application-specific instructions.\n\n\n\n\nDocker CLI\n\nDefinition: The command-line interface used to interact with Docker.\nPurpose: Allows users to issue commands to the Docker daemon to manage containers, images, networks, volumes, etc.\nKey Points:\n\nMain interface for interacting with Docker.\nAllows building images, running containers, and managing Docker resources."
-  },
-  {
-    "objectID": "fundamentals.html#docker-environment-1",
-    "href": "fundamentals.html#docker-environment-1",
-    "title": "Docker fundamentals",
-    "section": "Docker Environment",
-    "text": "Docker Environment\nDocker environment concepts such as volumes and networks ensure that containers have persistent storage and can communicate with each other or external systems. Registries store and distribute Docker images, while services allow for scalable and distributed container deployments, especially in orchestrated environments like Docker Swarm or Kubernetes.\n\nVolumes\n\nDefinition: A way to persist data generated or used by containers.\nPurpose: Provides persistent storage that is independent of the container lifecycle.\nKey Points:\n\nUseful for databases and applications needing persistent state.\nCan be shared across multiple containers.\nData is stored outside the container’s filesystem.\n\n\n\n\nNetworks\n\nDefinition: Enables communication between Docker containers or between containers and the outside world.\nPurpose: Provides the ability to isolate, expose, and manage how containers communicate.\nKey Points:\n\nContainers on the same network can communicate using their names.\nSeveral types of networks like bridge, host, and overlay.\n\n\n\n\nRegistries\n\nDefinition: A storage and distribution system for Docker images, such as Docker Hub.\nPurpose: Enables sharing and downloading Docker images, either publicly or privately.\nKey Points:\n\nDocker Hub is the default public registry.\nPrivate registries can be used for internal projects.\nImages are pushed and pulled from registries.\n\n\n\n\nServices\n\nDefinition: A higher-level abstraction that defines how containers should run in a Docker Swarm or Kubernetes cluster.\nPurpose: Used to scale containers across multiple hosts and manage distributed containerized applications.\nKey Points:\n\nDefines replicas (multiple instances) of containers.\nUsed in orchestration environments like Docker Swarm and Kubernetes."
-  },
-  {
-    "objectID": "index.html#getting-started",
-    "href": "index.html#getting-started",
-    "title": "CMSC 408 - Docker Tutorial",
-    "section": "Getting started",
-    "text": "Getting started\n\nFundamentals, providing just enough docker vocabulary to be dangerous,\nInstalling docker and docker compose on your computer,\nSelecting a base image for your application(s),\nUsing docker-compose to develop your application."
-  },
-  {
-    "objectID": "index.html#examples",
-    "href": "index.html#examples",
-    "title": "CMSC 408 - Docker Tutorial",
-    "section": "Examples",
-    "text": "Examples\nThe web site contains a bunch of docker examples, as listed below. These links take you directly to the GITHUB repo and the respective README files.\n\nnginx-static-example"
-  },
-  {
-    "objectID": "index.html#other-info",
-    "href": "index.html#other-info",
-    "title": "CMSC 408 - Docker Tutorial",
-    "section": "Other info",
-    "text": "Other info\n\nFundamentals, providing just enough docker vocabulary to be dangerous,\nAbout - talks about the motivation for this site and introduces the principle author.\nGITHUB repo - follow this link to get to the GITHUB repo."
   }
 ]
